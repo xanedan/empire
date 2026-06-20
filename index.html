@@ -155,7 +155,7 @@
             z-index: 100;
         }
 
-        .sidebar.hidden {
+        .sidebar.sidebar-collapsed {
             transform: translateX(-100%);
         }
 
@@ -492,7 +492,7 @@
         @media (min-width: 768px) and (max-width: 1199px) {
             /* Sidebar always visible, slightly narrower */
             .sidebar { width: 220px; }
-            .sidebar.hidden { transform: none; display: flex !important; }  /* never hide on tablet */
+            .sidebar.sidebar-collapsed { transform: none; display: flex !important; }  /* never hide on tablet */
             .main-content { margin-left: 220px; padding: 20px; }
             .hamburger { display: none !important; }
 
@@ -749,7 +749,7 @@
 
         /* ── RTL overrides ── */
         [dir="rtl"] .sidebar { left: auto; right: 0; box-shadow: -4px 0 20px rgba(0,0,0,.3); }
-        [dir="rtl"] .sidebar.hidden { transform: translateX(100%); }
+        [dir="rtl"] .sidebar.sidebar-collapsed { transform: translateX(100%); }
         [dir="rtl"] .main-content { margin-left: 0; margin-right: 280px; }
         [dir="rtl"] .sidebar-item { border-left: none; border-right: 4px solid transparent; }
         [dir="rtl"] .sidebar-item:hover,
@@ -2296,7 +2296,6 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').catch(() => {});
         }
-        
     </script>
 </body>
 </html>
