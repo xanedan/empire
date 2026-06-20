@@ -547,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function() {
     translatePage();
 
     if (window.innerWidth < 768) {
-        document.getElementById('sidebar').classList.add('hidden');
+        document.getElementById('sidebar').classList.add('sidebar-collapsed');
     }
 
     // Firebase auth
@@ -665,8 +665,8 @@ function toggleSidebar() {
         sidebar.classList.toggle('open');
         overlay?.classList.toggle('active', opening);
     } else {
-        // Desktop: toggle 'hidden' class
-        sidebar.classList.toggle('hidden');
+        // Desktop: toggle 'sidebar-collapsed' class
+        sidebar.classList.toggle('sidebar-collapsed');
     }
 }
 
